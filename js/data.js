@@ -10,3 +10,20 @@ const usuario = {
   email: 'elcacique@gmail.com',
   rol: 'Administrador'
 };
+
+export const traduccionAhoEsp = {
+    "yula" : "hola",
+    "tuts" : "que",
+    "wal" : "es",
+    "yu" : "la",
+    "lavi" : "vida",
+    "*" : "?",
+};
+
+export const traduccionEspAho = {
+    "hola" : "yula",
+    "que" : "tuts",
+    "es" : "wal",
+    "la" : "yu",
+    "vida" : "lavi",
+};

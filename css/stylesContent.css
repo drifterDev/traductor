@@ -140,6 +140,13 @@ h2 {
   #content { padding: 1rem; }
   .panel { padding: 1rem; }
 }
+
+@media (max-width: 600px){
+  .add-btn{
+    bottom: 100px;
+  }
+}
+
 @media (max-width: 768px) {
   .diccionario-list { gap: 0.75rem; max-height: 50vh; }
   .diccionario-item {
@@ -161,7 +168,6 @@ h2 {
     padding: 0.5rem 0.75rem;
   }
   .add-btn {
-    bottom: 1rem;
     right: 1rem;
     width: 2.5rem;
     height: 2.5rem;
