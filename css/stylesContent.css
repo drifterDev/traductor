@@ -76,3 +76,102 @@ h2 {
     padding: 1rem;
     flex: 1;
 }
+
+.diccionario-item .actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.diccionario-item .btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.diccionario-item .btn img {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: filter 0.2s;
+}
+
+.diccionario-item .btn:hover {
+  background: var(--color-base);
+}
+
+.diccionario-item .btn:hover img {
+  filter: invert(70%) brightness(140%);
+}
+
+.add-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-aux1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.2s, transform 0.2s;
+  z-index: 1000;
+}
+
+.add-btn img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.add-btn:hover {
+  background: var(--color-aux2);
+  transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  #content { padding: 1rem; }
+  .panel { padding: 1rem; }
+}
+@media (max-width: 768px) {
+  .diccionario-list { gap: 0.75rem; max-height: 50vh; }
+  .diccionario-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .diccionario-item .term {
+    border-right: none;
+    border-bottom: 1px solid #444;
+    min-width: auto;
+    width: 100%;
+    padding: 0.75rem;
+  }
+  .diccionario-item .desc {
+    padding: 0.75rem;
+  }
+  .diccionario-item .actions {
+    justify-content: flex-end;
+    padding: 0.5rem 0.75rem;
+  }
+  .add-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .add-btn img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .diccionario-list { max-height: 40vh; }
+  .panel { margin-bottom: 1rem; }
+}
