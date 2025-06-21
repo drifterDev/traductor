@@ -15,5 +15,5 @@ h2 { margin-bottom: 1rem; color: #eee; }
 /* Diccionario List */
 .diccionario-list { display: flex; flex-direction: column; gap: 1rem; max-height: 60vh; overflow-y: auto; }
 .diccionario-item { display: flex; border: 1px solid #444; border-radius: 6px; }
-.diccionario-item .term { background: #383849; padding: 1rem; min-width: 120px; display: flex; align-items: center; justify-content: center; border-right: 1px solid #444; font-weight: bold; color: #e0c3fc; }
-.diccionario-item .desc { padding: 1rem; flex: 1; color: #ddd; }
+.diccionario-item .term { background: #383849; padding: 1rem; min-width: 120px; display: flex; align-items: center; justify-content: center; border-right: 1px solid #444; font-weight: bold; color: #fff; }
+.diccionario-item .desc { padding: 1rem; flex: 1; }
