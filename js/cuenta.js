@@ -1,3 +1,5 @@
+import { usuario } from './data.js';
+
 // Renderizado de datos
 document.addEventListener('DOMContentLoaded', () => {
   renderPerfil();

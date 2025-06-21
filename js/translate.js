@@ -1,4 +1,4 @@
-import { traduccionEspAho, traduccionAhoEsp } from './data.js';
+import { traduccionEspAho, traduccionAhoEsp, diccionarioDatos } from './data.js';
 
 const lang1 = document.getElementById("len1");
 const lang2 = document.getElementById("len2");
@@ -52,15 +52,29 @@ traslateBtn.addEventListener("click", () => {
 })
 
 const textArea3 = document.getElementById("significado");
-const labelSignificado = document.querySelector(".content-sig label");
+const wordS = document.getElementById("wordS");
+const wordA = document.getElementById("wordA");
 
 textArea1.addEventListener("input", function() {
     let textoO = textArea1.value.trim().split(" ");
-    
+    textArea3.value = "";
+
     if (textoO == ""){
-        labelSignificado.innerHTML = "Definición:";
+        console.log("pass");
+
+        wordA.style.display = "none";
+        
+        textArea3.setAttribute("placeholder", "Definición de la última palabra");
+        
     }else{
-        labelSignificado.innerHTML = "Definición:";
+        let lastWord = textoO[textoO.length - 1];
+        
+        wordA.style.display = "inline";
+        wordS.innerHTML = lastWord;
+        
+        const ans = diccionarioDatos.find(item => item.termino == lastWord);
+        
+        if (ans){ textArea3.value = ans.definicion; }
+        else{ textArea3.setAttribute("placeholder", "Palabra desconocida"); }
     }
-    
 });

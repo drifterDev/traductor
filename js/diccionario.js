@@ -1,3 +1,5 @@
+import { diccionarioDatos } from './data.js';
+
 // Renderizado de datos
 document.addEventListener('DOMContentLoaded', () => {
   renderDiccionario();
