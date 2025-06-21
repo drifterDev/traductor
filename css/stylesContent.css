@@ -94,8 +94,8 @@ h2 {
 }
 
 .diccionario-item .btn img {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 2rem;
+  height: 2rem;
   transition: filter 0.2s;
 }
 
@@ -111,8 +111,8 @@ h2 {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   padding: 0;
   border: none;
   border-radius: 50%;
@@ -157,7 +157,7 @@ h2 {
     border-right: none;
     border-bottom: 1px solid #444;
     min-width: auto;
-    width: 100%;
+    /* width: 100%; */
     padding: 0.75rem;
   }
   .diccionario-item .desc {
@@ -169,12 +169,12 @@ h2 {
   }
   .add-btn {
     right: 1rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
   .add-btn img {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 2rem;
+    height: 2rem;
   }
 }
 @media (max-width: 480px) {
