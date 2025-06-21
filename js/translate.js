@@ -16,8 +16,12 @@ swapLang.addEventListener("click", () => {
     let cont1 = textArea1.value;
     let cont2 = textArea2.value;
 
-    textArea1.value = cont2;
-    textArea2.value = cont1;
+    if (cont1 !== "" && cont2 !== ""){
+        textArea1.value = cont2;
+        textArea2.value = cont1;
+    }else{
+        textArea2.value = "";
+    }
 
     if (lang1.innerHTML == "Español"){
         textArea1.setAttribute("placeholder", "Texto en Español");
