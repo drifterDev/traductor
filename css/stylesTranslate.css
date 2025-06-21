@@ -1,0 +1,115 @@
+:root{
+    --color-base: #1e1e2f;
+    --color-text: #dfd0b8cc;
+    --color-aux1: #2a2a3b;
+    --color-aux2: #948979;
+    --color-nav: #222831;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-base);
+    color: var(--color-text);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    font-family: Tahoma, sans-serif;
+}
+
+main {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-aux1);
+    padding: 16px;
+    border: 2px solid var(--color-aux2);
+    border-radius: .5em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--color-text);
+}
+
+.language{
+    display: block;
+    width: 40%;
+}
+
+.btn {
+    height: 2rem;
+    background-color: var(--color-aux2);
+    border-radius: .5em;
+    padding: 5px;
+    border: 1px solid var(--color-base);
+    margin: 0 auto;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.content-tra {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.box {
+    background-color: var(--color-aux1);
+    flex: 1 1 300px;
+    border-radius: .5em;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 300px;
+    resize: vertical;
+    border: 2px solid var(--color-aux2);
+    border-radius: .5em;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-text);
+    background-color: var(--color-aux1);
+}
+
+.content-sig {
+    background-color: var(--color-aux2);
+    border: 3px solid var(--color-aux1);
+    border-radius: 0.5em;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+.content-sig label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--color-base);
+}
+
+.content-sig textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+}
