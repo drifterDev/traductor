@@ -73,5 +73,6 @@ export const usuario = {
   nombre: 'Diomedes Díaz Maestre',
   usuario: 'ElCacique',
   email: 'elcacique@gmail.com',
-  rol: 'Administrador'
+  rol: 'Administrador',
+  password: '123456'
 };

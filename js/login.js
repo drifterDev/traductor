@@ -2,7 +2,7 @@ const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const loginForm = document.getElementById('loginForm');
 
-// QUITAR
+// QUITAR 
 console.log(JSON.parse(localStorage.getItem('usuarios') || '[]'));  
 
 function existeUsuario(username, password) {

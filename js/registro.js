@@ -12,6 +12,7 @@ registroForm.addEventListener('submit', (e) => {
     const confirmPassword = confirmPasswordInput.value;
     const email = emailInput.value;
     const name = nameInput.value;
+    const rol = 'Usuario';
 
     if (password !== confirmPassword) {
         showErrorMessage('Las contraseñas no coinciden');
@@ -27,7 +28,8 @@ registroForm.addEventListener('submit', (e) => {
         username,
         password,
         email,
-        name
+        name,
+        rol
     };
 
     guardarUsuario(nuevoUsuario);
