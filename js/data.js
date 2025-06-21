@@ -42,7 +42,6 @@ export const traduccionEspAho = {
   "noche":     "ehcon",
   "día":       "aid",
   "estrella":  "allettsre",
-  "*":         "?"
 };
 
 export const traduccionAhoEsp = {
@@ -66,7 +65,6 @@ export const traduccionAhoEsp = {
   "ehcon":     "noche",
   "aid":       "día",
   "allettsre": "estrella",
-  "?":         "*"
 };
 
 

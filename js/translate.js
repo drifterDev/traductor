@@ -3,14 +3,22 @@ import { traduccionEspAho, traduccionAhoEsp, diccionarioDatos } from './data.js'
 const lang1 = document.getElementById("len1");
 const lang2 = document.getElementById("len2");
 const swapLang = document.getElementById("swapLang");
+const textArea1 = document.getElementById("txtArea1");
+const textArea2 = document.getElementById("txtArea2");
 
 swapLang.addEventListener("click", () => {
     let textl1 = lang1.innerHTML; 
-    let textl2 = lang2.innerHTML; 
-    
+    let textl2 = lang2.innerHTML;
+
     lang1.innerHTML = textl2;
     lang2.innerHTML = textl1;
-    
+
+    let cont1 = textArea1.value;
+    let cont2 = textArea2.value;
+
+    textArea1.value = cont2;
+    textArea2.value = cont1;
+
     if (lang1.innerHTML == "Español"){
         textArea1.setAttribute("placeholder", "Texto en Español");
         textArea2.setAttribute("placeholder", "Texto traducido en Aho-coracick");
@@ -21,8 +29,6 @@ swapLang.addEventListener("click", () => {
 })
 
 
-const textArea1 = document.getElementById("txtArea1");
-const textArea2 = document.getElementById("txtArea2");
 const traslateBtn = document.getElementById("traBtn");
 
 traslateBtn.addEventListener("click", () => {
@@ -71,6 +77,12 @@ textArea1.addEventListener("input", function() {
         
         wordA.style.display = "inline";
         wordS.innerHTML = lastWord;
+
+        lastWord = lastWord.toLowerCase();
+        
+        if (lang1.innerHTML == "Aho-coracick"){
+            lastWord = traduccionAhoEsp[lastWord];
+        }
         
         const ans = diccionarioDatos.find(item => item.termino == lastWord);
         
