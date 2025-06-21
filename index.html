@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traductor</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <ul>
+      <li data-section="perfil" class="active"><span class="icon">👤</span> Cuenta</li>
+      <li data-section="diccionario"><span class="icon">📖</span> Diccionario</li>
+    </ul>
+  </nav>
+
+  <div id="content">
+    <!-- Perfil de Usuario -->
+    <section id="perfil" class="section active panel">
+      <h2>Perfil de Usuario</h2>
+      <div class="perfil-panel">
+        <div class="avatar">👤</div>
+        <div class="info">
+          <div><strong>Nombre:</strong> <span id="perfil-nombre"></span></div>
+          <div><strong>Usuario:</strong> <span id="perfil-usuario"></span></div>
+          <div><strong>Correo:</strong> <span id="perfil-email"></span></div>
+          <div><strong>Rol:</strong> <span id="perfil-rol"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diccionario -->
+    <section id="diccionario" class="section panel">
+      <h2>Diccionario</h2>
+      <div id="lista-diccionario" class="diccionario-list">
+      </div>
+    </section>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
