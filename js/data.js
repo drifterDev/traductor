@@ -68,7 +68,8 @@ export const traduccionAhoEsp = {
 };
 
 
-export const usuarios = {
+
+export const usuario = {
   nombre: 'Diomedes Díaz Maestre',
   usuario: 'ElCacique',
   email: 'elcacique@gmail.com',
