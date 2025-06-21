@@ -68,7 +68,6 @@ export const traduccionAhoEsp = {
 };
 
 
-
 export const usuarios = {
   nombre: 'Diomedes Díaz Maestre',
   usuario: 'ElCacique',
