@@ -1,5 +1,5 @@
 import { usuario } from './data.js';
-import { existeUsuario, crearUsuario, obtenerUsuarioLoggeado } from './funciones.js';
+import { existeUsuario, crearUsuario, isLoggedIn } from './funciones.js';
 
 const registroForm = document.getElementById('registroForm');
 const usernameInput = document.getElementById('username');
@@ -8,7 +8,7 @@ const confirmPasswordInput = document.getElementById('confirmPassword');
 const emailInput = document.getElementById('email');
 const nameInput = document.getElementById('name');
 
-if (obtenerUsuarioLoggeado()) {
+if (isLoggedIn()) {
     window.location.href = 'index.html';
 }
 

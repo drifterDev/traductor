@@ -15,9 +15,17 @@ export function login(username, password) {
     localStorage.setItem('loggeded', JSON.stringify(usuario));
 }
 
+export function logout() {
+    localStorage.removeItem('loggeded');
+}
+
+export function isLoggedIn() {
+    return localStorage.getItem('loggeded') !== null;
+}
+
 export function obtenerUsuarioLoggeado() {   
     if (localStorage.getItem('loggeded') == null) {
-        return false;
+        return null;
     } else {
         return JSON.parse(localStorage.getItem('loggeded'));
     }

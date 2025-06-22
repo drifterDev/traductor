@@ -1,7 +1,8 @@
+import { isLoggedIn, obtenerUsuarioLoggeado } from './funciones.js';
 
 // Espera a que el DOM esté completamente cargado antes de renderizar
 document.addEventListener('DOMContentLoaded', () => {
-  if(localStorage.getItem('loggeded') == null) {
+  if(!isLoggedIn()) {
     window.location.href = 'login.html';
   } else {
     renderPerfil();
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * en los elementos del perfil en la página.
  */
 function renderPerfil() {
-  const usuario = JSON.parse(localStorage.getItem('loggeded'));
+  const usuario = obtenerUsuarioLoggeado();
   document.getElementById('perfil-nombre').textContent = usuario.nombre;
   document.getElementById('perfil-usuario').textContent = usuario.username;
   document.getElementById('perfil-email').textContent = usuario.email;

@@ -3,10 +3,11 @@ import {
   traduccionEspAho,     // Mapa: español → idioma “Aho”
   traduccionAhoEsp      // Mapa: idioma “Aho” → español
 } from './data.js';
+import { isLoggedIn } from './funciones.js';
 
 // Espera a que el DOM se cargue antes de renderizar el listado
 document.addEventListener('DOMContentLoaded', () => {
-  if(localStorage.getItem('loggeded') == null) {
+  if(!isLoggedIn()) {
     window.location.href = 'login.html';
   } else {
     renderDiccionario();

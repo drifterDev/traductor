@@ -1,6 +1,7 @@
 import { traduccionEspAho, traduccionAhoEsp, diccionarioDatos } from './data.js';
+import { isLoggedIn } from './funciones.js';
 
-if(localStorage.getItem('loggeded') == null) {
+if(!isLoggedIn()) {
     window.location.href = 'login.html';
 }
 

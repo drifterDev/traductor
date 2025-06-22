@@ -1,11 +1,11 @@
-import { existeUsuario, crearUsuario, login, obtenerUsuarioLoggeado } from './funciones.js';
+import { existeUsuario, crearUsuario, login, isLoggedIn } from './funciones.js';
 import { usuario } from './data.js';
 
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const loginForm = document.getElementById('loginForm');
 
-if (obtenerUsuarioLoggeado()) {
+if (isLoggedIn()) {
     window.location.href = 'index.html';
 }
 
