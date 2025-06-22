@@ -26,8 +26,7 @@
 
 #btns{
     display: flex;
-    gap: 20px;
-    padding: 0 6em;
+    gap: 1em;
 }
 
 .content-modal .btn-cerrar{
@@ -35,6 +34,7 @@
     margin-top: 15px;
     display: flex;
     justify-content: flex-end;
+    padding-right: 2em;
 }
 
 .content-modal .btn-aceptar{
@@ -42,6 +42,7 @@
     margin-top: 15px;
     display: flex;
     justify-content: flex-start;
+    padding-left: 2em;
 }
 
 .content-modal .btn-cerrar label{
@@ -68,9 +69,17 @@
 }
 
 
-@media (max-width:800px) {
+@media (max-width:500px) {
     .content-modal{
         width: 60%;
+    }
+
+    .content-modal .btn-cerrar{
+        padding-right: 0;
+    }
+
+    .content-modal .btn-aceptar{
+        padding-left: 0;
     }
 }
 
