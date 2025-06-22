@@ -16,15 +16,15 @@ swapLang.addEventListener("click", () => {
     // Se guardan los textos actuales de los idiomas mostrados en los elementos lang1 y lang2
     let textl1 = lang1.innerHTML; 
     let textl2 = lang2.innerHTML;
-
+    
     // Se intercambian los textos entre los elementos lang1 y lang2
     lang1.innerHTML = textl2;
     lang2.innerHTML = textl1;
-
+    
     // Se guardan los valores actuales de los campos de texto
     let cont1 = textArea1.value;
     let cont2 = textArea2.value;
-
+    
     // Si ambos campos tienen texto, se intercambian los contenidos
     if (cont1 !== "" && cont2 !== ""){
         textArea1.value = cont2;
@@ -33,7 +33,7 @@ swapLang.addEventListener("click", () => {
         // Si alguno de los campos está vacío, el campo del segundo idioma se limpia
         textArea2.value = "";
     }
-
+    
     // Si el idioma del primer campo es español, se cambian los placeholders de las áreas de texto
     if (lang1.innerHTML == "Español"){
         textArea1.setAttribute("placeholder", "Texto en Español");
@@ -43,6 +43,8 @@ swapLang.addEventListener("click", () => {
         textArea1.setAttribute("placeholder", "Texto en Aho-coracick");
         textArea2.setAttribute("placeholder", "Texto traducido en Español");
     }
+    
+    actualizarSignificado();
 })
 
 
@@ -90,6 +92,11 @@ const wordS = document.getElementById("wordS");
 const wordA = document.getElementById("wordA");
 
 textArea1.addEventListener("input", function() {
+    actualizarSignificado();
+});
+
+
+function actualizarSignificado(){
     let textoO = textArea1.value.trim().split(" ");
     textArea3.value = "";
 
@@ -117,8 +124,7 @@ textArea1.addEventListener("input", function() {
         if (ans){ textArea3.value = ans.definicion; }
         else{ textArea3.setAttribute("placeholder", "Palabra desconocida"); }
     }
-});
-
+}
 
 const btnCerrarModal = document.querySelector(".btn-cerrar");
 

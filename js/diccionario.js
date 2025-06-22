@@ -103,7 +103,6 @@ function mostrarConfirmacion(texto) {
   });
 }
 
-
 const addWordBtn = document.getElementById('add-word-btn');
 addWordBtn.addEventListener('click', () => {
   window.location.href = 'crear.html';
