@@ -70,7 +70,10 @@ export function obtenerPalabras(){
 }
 
 export function crearPalabra(palabra) {
-    if (existePalabraEspanol(palabra.termino) || existePalabraAho(palabra.traduccion)) {
+    if (existePalabraEspanol(palabra.termino) || existePalabraAho(palabra.traduccion)){
+        return;
+    }
+    if(palabra?.id && obtenerPalabra(palabra.id)){
         return;
     }
     const palabras = obtenerPalabras();
