@@ -1,18 +1,20 @@
-/* Content */
+/* Container principal de contenido, scroll interno */
 #content {
     flex: 1;
     overflow-y: auto;
-    padding: 2rem; 
+    padding: 2rem; /* espacio alrededor */
 }
 
+/* Oculta todas las secciones por defecto */
 .section {
     display: none;
 }
-
+/* Muestra solo la sección activa */
 .section.active {
-    display: block; 
+    display: block;
 }
 
+/* Estilo común de paneles (Perfil, Diccionario) */
 .panel {
     background: #2a2a3b;
     border: 1px solid #444;
@@ -21,32 +23,34 @@
     margin-bottom: 2rem;
 }
 
+/* Encabezados secundarios */
 h2 {
     margin-bottom: 1rem;
-    color: #eee; 
+    color: #eee;
 }
 
-/* Perfil Panel */
+/* ===== Perfil Panel ===== */
+/* Layout horizontal para avatar + datos */
 .perfil-panel {
     display: flex;
     gap: 2rem;
     align-items: center;
 }
-
+/* Icono de usuario grande */
 .perfil-panel .avatar {
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
-
+/* Espacio entre líneas de info */
 .perfil-panel .info div {
     margin-bottom: 0.75rem;
 }
-
+/* Etiquetas en blanco para resaltar */
 .perfil-panel .info strong {
     color: #fff;
 }
 
-
-/* Diccionario List */
+/* ===== Lista de Diccionario ===== */
+/* Lista vertical con scroll si es muy larga */
 .diccionario-list {
     display: flex;
     flex-direction: column;
@@ -55,11 +59,13 @@ h2 {
     overflow-y: auto;
 }
 
-.diccionario-item { display: flex;
+/* Cada fila: término, descripción y acciones */
+.diccionario-item {
+    display: flex;
     border: 1px solid #444;
     border-radius: 6px;
 }
-
+/* Columna de término con fondo y centrado */
 .diccionario-item .term {
     background: #383849;
     padding: 1rem;
@@ -71,112 +77,135 @@ h2 {
     font-weight: bold;
     color: #fff;
 }
-
+/* Columna de definición, ocupa espacio restante */
 .diccionario-item .desc {
     padding: 1rem;
     flex: 1;
 }
-
+/* Botones de acción alineados a la derecha */
 .diccionario-item .actions {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+/* Botones (editar/eliminar) sin estilo por defecto */
+.diccionario-item .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+/* Iconos internos de los botones */
+.diccionario-item .btn img {
+    width: 2rem;
+    height: 2rem;
+    transition: filter 0.2s;
+}
+/* Hover para botones de acción */
+.diccionario-item .btn:hover {
+    background: var(--color-base);
+}
+.diccionario-item .btn:hover img {
+    filter: invert(70%) brightness(140%);
 }
 
-.diccionario-item .btn {
-  background: none;
+/* ===== Botón flotante “Añadir palabra” ===== */
+.add-btn {
+    position: fixed;        /* fijo al viewport */
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-aux1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.2s;
+    z-index: 1000;          /* sobre todo */
+}
+/* Icono dentro del botón */
+.add-btn img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+/* Hover del botón flotante */
+.add-btn:hover {
+    background: var(--color-aux2);
+    transform: scale(1.1);
+}
+
+/* ===== Media Queries ===== */
+/* Ajustes moderados en pantallas medianas */
+@media (max-width: 1024px) {
+    #content { padding: 1rem; }
+    .panel   { padding: 1rem; }
+}
+/* Asegura espacio para navbar en pantallas muy estrechas */
+@media (max-width: 600px) {
+    .add-btn {
+        bottom: 90px; /* evita solaparse con navbar fijo */
+    }
+}
+/* Diseño vertical de filas en móvil */
+@media (max-width: 768px) {
+    .diccionario-list { gap: 0.75rem; max-height: 60vh; }
+    .diccionario-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .diccionario-item .term {
+        border-right: none;
+        border-bottom: 1px solid #444;
+        padding: 0.75rem;
+    }
+    .diccionario-item .desc {
+        padding: 0.75rem;
+    }
+    .diccionario-item .actions {
+        justify-content: flex-end;
+        padding: 0.5rem 0.75rem;
+    }
+    .add-btn {
+        right: 1rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    .add-btn img {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+/* Reduce margen inferior en pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .panel { margin-bottom: 1rem; }
+}
+
+/* Contenedor del botón de logout */
+.logout-container {
+  display: flex;
+  justify-content: flex-end; /* alinea a la derecha */
+  margin-top: 1.5rem;
+}
+
+/* Estilo básico del botón de cerrar sesión */
+.logout-btn {
+  padding: 0.75rem 1.5rem;
   border: none;
+  border-radius: 6px;
+  background: var(--color-aux2);
+  color: var(--color-base);
+  font-weight: bold;
   cursor: pointer;
-  padding: 0.25rem;
-  border-radius: 4px;
   transition: background 0.2s;
 }
 
-.diccionario-item .btn img {
-  width: 2rem;
-  height: 2rem;
-  transition: filter 0.2s;
-}
-
-.diccionario-item .btn:hover {
-  background: var(--color-base);
-}
-
-.diccionario-item .btn:hover img {
-  filter: invert(70%) brightness(140%);
-}
-
-.add-btn {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 4rem;
-  height: 4rem;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
+.logout-btn:hover {
   background: var(--color-aux1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: background 0.2s, transform 0.2s;
-  z-index: 1000;
-}
-
-.add-btn img {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-.add-btn:hover {
-  background: var(--color-aux2);
-  transform: scale(1.1);
-}
-
-@media (max-width: 1024px) {
-  #content { padding: 1rem; }
-  .panel { padding: 1rem; }
-}
-
-@media (max-width: 600px){
-  .add-btn{
-    bottom: 90px;
-  }
-}
-
-@media (max-width: 768px) {
-  .diccionario-list { gap: 0.75rem; max-height: 60vh; }
-  .diccionario-item {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .diccionario-item .term {
-    border-right: none;
-    border-bottom: 1px solid #444;
-    min-width: auto;
-    /* width: 100%; */
-    padding: 0.75rem;
-  }
-  .diccionario-item .desc {
-    padding: 0.75rem;
-  }
-  .diccionario-item .actions {
-    justify-content: flex-end;
-    padding: 0.5rem 0.75rem;
-  }
-  .add-btn {
-    right: 1rem;
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  .add-btn img {
-    width: 2rem;
-    height: 2rem;
-  }
-}
-@media (max-width: 480px) {
-  .panel { margin-bottom: 1rem; }
 }

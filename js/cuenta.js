@@ -1,13 +1,28 @@
-import { usuario } from './data.js';
+import { isLoggedIn, logout, obtenerUsuarioLoggeado } from './funciones.js';
 
-// Renderizado de datos
+// Espera a que el DOM esté completamente cargado antes de renderizar
 document.addEventListener('DOMContentLoaded', () => {
-  renderPerfil();
+  if(!isLoggedIn()) {
+    window.location.href = 'login.html';
+  } else {
+    renderPerfil();
+  }
 });
 
+/**
+ * Toma los datos del objeto `usuario` y los inyecta
+ * en los elementos del perfil en la página.
+ */
 function renderPerfil() {
-  document.getElementById('perfil-nombre').textContent = usuario.nombre;
-  document.getElementById('perfil-usuario').textContent = usuario.usuario;
+  const usuario = obtenerUsuarioLoggeado();
+  document.getElementById('perfil-nombre').textContent = usuario.name;
+  document.getElementById('perfil-usuario').textContent = usuario.username;
   document.getElementById('perfil-email').textContent = usuario.email;
   document.getElementById('perfil-rol').textContent = usuario.rol;
+
+  const logoutBtn = document.getElementById('logout-btn');
+  logoutBtn.addEventListener('click', () => {
+    logout();
+    window.location.href = 'login.html';
+  });
 }

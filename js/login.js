@@ -1,14 +1,20 @@
+import { existeUsuario, crearUsuario, login, isLoggedIn } from './funciones.js';
+import { usuario } from './data.js';
+
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const loginForm = document.getElementById('loginForm');
 
-// QUITAR
-console.log(JSON.parse(localStorage.getItem('usuarios') || '[]'));  
-
-function existeUsuario(username, password) {
-    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    return usuarios.some(usuario => usuario.username === username && usuario.password === password);
+if (isLoggedIn()) {
+    window.location.href = 'index.html';
 }
+
+if (!existeUsuario(usuario.username, usuario.email)) {
+    crearUsuario(usuario);
+}
+
+// QUITAR
+console.log(JSON.parse(localStorage.getItem('usuarios')));
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -16,6 +22,7 @@ loginForm.addEventListener('submit', (e) => {
     const password = passwordInput.value;
 
     if (existeUsuario(username, password)) {
+        login(username, password);
         window.location.href = 'index.html';
     } else {
         showErrorMessage('Usuario o contraseña incorrectos');

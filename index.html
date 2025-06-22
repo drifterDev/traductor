@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor</title>
+    <link rel="stylesheet" href="css/stylesTranslate.css">
+    <link rel="stylesheet" href="css/stylesNavbar.css">
+    <link rel="icon" href="icons/languages-svgrepo-com.svg">
+</head>
+
+<body>
+    <nav id = "navbar">
+        <ul id = "opcionesNav">
+            <li id = "oCuenta">
+                <a href="cuenta.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg>
+                </a>
+            </li> 
+            <li class = "activa" id = "oTransl">
+                <a href="index.html">
+                    <svg 
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#e3e3e3"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    >
+                    <path d="M5 8l6 6" />
+                    <path d="M4 14l6-6 2-3" />
+                    <path d="M2 5h12" />
+                    <path d="M7 2h1" />
+                    <path d="M22 22l-5-10-5 10" />
+                    <path d="M14 18h6" />
+                    </svg>                    
+                </a>
+            </li>
+            <li id = "oDicc">
+                <a href="diccionario.html">
+                    <svg fill="#e3e3e3" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        width="24px" height="24px" viewBox="0 0 459.319 459.319"
+                        xml:space="preserve">
+                        <g>
+                            <path d="M141.288,189.821h-23.685V145.28h23.528v-23.69h21.016v23.374h23.681v44.707h-23.681v0.151H141.288z M60.801,398.87
+                                c0.012,1.1,0.03,1.921,0.042,2.459c0.006,0.331-0.053,0.638-0.071,0.963c0.739,18.224,15.755,32.817,34.146,32.817h303.76v-33.461
+                                c0-6.68,5.421-12.105,12.105-12.105c6.679,0,12.105,5.426,12.105,12.105v45.565c0,6.686-5.427,12.105-12.105,12.105H93.091
+                                c-0.629,0-1.235-0.089-1.847-0.183c-30.505-1.91-54.757-27.261-54.757-58.245c0-0.71,0.085-1.396,0.109-2.099
+                                c-0.375-35.943,0-309.36,0.042-339.109c-0.047-0.423-0.127-0.827-0.127-1.259C36.511,26.205,62.719,0,94.938,0h19.343h293.535
+                                h2.955c6.685,0,12.105,5.423,12.105,12.105v342.139c0,6.679-5.421,12.104-12.105,12.104c-0.071,0-0.13-0.023-0.201-0.023
+                                c-0.887,0.213-1.82,0.354-2.772,0.354H94.918C76.736,366.674,61.859,380.948,60.801,398.87z M278.347,121.59h94.425v20.862h-23.685
+                                v23.69h-23.525v23.685h-23.69v23.533h-23.536v49.882h120.792v-26.209h-94.584v-20.859h23.69V192.49h23.525v-23.69h23.689V145.28
+                                h23.679V95.237h-120.78V121.59z M224.949,192.49h56.265v-26.353h-56.265V192.49z M91.41,263.229h26.2v-47.056h23.679v-0.15h44.54
+                                v47.219h26.354v-120.79h-23.688v-23.841H164.81V95.237h-26.202v23.684h-23.685v23.69H91.389v120.618H91.41z"/>
+                        </g>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>    
+
+    <main>
+        <div class="header">
+            <span class="language" id = "len1">Español</span>
+
+            <img class="btn" id = "swapLang" src="icons/sync_alt_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" height="24px">
+            
+            <span class="language" style="text-align: right" id = "len2">Aho-coracick</span>
+        </div>
+
+        <div class="content-tra">
+            <div class="box">
+                <textarea id = "txtArea1" placeholder="Texto en Español"></textarea>
+            </div>
+            
+            <img class="btn" id = "traBtn" src="icons/arrow_circle_right_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" height="24px">
+
+            <div class="box">
+                <textarea id = "txtArea2" placeholder="Texto traducido en Aho-coracick" readonly></textarea>
+            </div>
+        </div>
+
+        <div class="content-sig">
+            <label for="significado">Definición<span id = "wordA"> de <span id = "wordS"></span>:</span></label>
+            <textarea id="significado" placeholder="Definición de la última palabra" readonly></textarea>
+        </div>
+    </main>
+    <script defer type="module" src="js/funciones.js"></script>
+    <script defer type="module" src="js/translate.js"></script>
+</body>
+
+</html>

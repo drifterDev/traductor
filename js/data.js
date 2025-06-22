@@ -70,8 +70,9 @@ export const traduccionAhoEsp = {
 
 
 export const usuario = {
-  nombre: 'Diomedes Díaz Maestre',
-  usuario: 'ElCacique',
+  name: 'Diomedes Díaz Maestre',
+  username: 'ElCacique',
   email: 'elcacique@gmail.com',
-  rol: 'Administrador'
+  rol: 'Administrador',
+  password: '123456'
 };
