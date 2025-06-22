@@ -24,7 +24,7 @@ function renderDiccionario() {
     const actionsHtml = admin
       ? `
       <div class="actions">
-        <button class="btn edit-btn" title="Editar">
+        <button class="btn edit-btn" title="Editar" data-index="${palabra.id}">
           <img src="icons/edit_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Editar">
         </button>
         <button class="btn delete-btn" data-index="${palabra.id}" title="Eliminar">
@@ -53,6 +53,7 @@ function renderDiccionario() {
         const termino = obtenerPalabra(idx).termino;
         const traduccion = obtenerPalabra(idx).traduccion;
 
+        console.log(idx);
         if (!confirm(`¿Eliminar "${termino}", su significado y su traducción?`)) {
           return;
         }
@@ -60,6 +61,13 @@ function renderDiccionario() {
         eliminarPalabra(idx);
 
         renderDiccionario();
+      });
+    });
+
+    document.querySelectorAll('.edit-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.dataset.index);
+        window.location.href = `editar.html?idx=${idx}`;
       });
     });
   }
