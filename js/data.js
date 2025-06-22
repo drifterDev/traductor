@@ -71,7 +71,7 @@ export const traduccionAhoEsp = {
 
 export const usuario = {
   nombre: 'Diomedes Díaz Maestre',
-  usuario: 'ElCacique',
+  username: 'ElCacique',
   email: 'elcacique@gmail.com',
   rol: 'Administrador',
   password: '123456'

@@ -1,3 +1,5 @@
+import { usuario } from './data.js';
+
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const loginForm = document.getElementById('loginForm');
@@ -7,7 +9,13 @@ console.log(JSON.parse(localStorage.getItem('usuarios') || '[]'));
 
 function existeUsuario(username, password) {
     const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    return usuarios.some(usuario => usuario.username === username && usuario.password === password);
+    return usuarios.some(usuario => usuario.username == username && usuario.password == password);
+}
+
+if (!existeUsuario(usuario.username, usuario.password)) {
+    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    usuarios.push(usuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
 }
 
 loginForm.addEventListener('submit', (e) => {
@@ -15,6 +23,9 @@ loginForm.addEventListener('submit', (e) => {
     const username = usernameInput.value;
     const password = passwordInput.value;
 
+    console.log(usuario.username, usuario.password);
+    console.log(username, password);
+    console.log(existeUsuario(username, password));
     if (existeUsuario(username, password)) {
         window.location.href = 'index.html';
     } else {

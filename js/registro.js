@@ -1,9 +1,15 @@
+import { usuario } from './data.js';
+
 const registroForm = document.getElementById('registroForm');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const confirmPasswordInput = document.getElementById('confirmPassword');
 const emailInput = document.getElementById('email');
 const nameInput = document.getElementById('name');
+
+if (!existeUsuario(usuario.username, usuario.email)) {
+    guardarUsuario(usuario);
+}
 
 registroForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -45,7 +51,7 @@ function guardarUsuario(usuario) {
 
 function existeUsuario(username, email) {
     const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    return usuarios.some(usuario => usuario.username === username || usuario.email === email);
+    return usuarios.some(usuario => usuario.username == username || usuario.email == email);
 }   
 
 function limpiarFormulario() {
