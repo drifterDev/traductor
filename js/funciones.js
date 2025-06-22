@@ -1,3 +1,9 @@
+/*  
+Este archivo contiene las funciones principales para gestionar el diccionario de palabras.
+Incluye funciones para cargar el diccionario inicial, verificar la existencia de palabras,
+crear, actualizar y eliminar palabras, y gestionar el inicio de sesión y el rol del usuario.
+*/
+
 const diccionarioDatos = [
 { termino: 'hola',      definicion: 'saludo informal' , traduccion: 'aloh', id: 1},
 { termino: 'mundo',     definicion: 'tierra, planeta' , traduccion: 'odnum', id: 2},

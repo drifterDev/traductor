@@ -1,3 +1,11 @@
+/*
+Este archivo maneja la lógica para el inicio de sesión del usuario.
+Verifica si el usuario ya ha iniciado sesión; si es así, lo redirige a la página de diccionario.
+Crea un usuario administrador predefinido si no existe, y gestiona el formulario de inicio de sesión.
+Valida las credenciales ingresadas y muestra mensajes de error o éxito.
+Al completar correctamente el formulario, inicia sesión usando `login` y redirige al usuario al diccionario.
+*/
+
 import { existeUsuario, crearUsuario, login, isLoggedIn, cargarDiccionario } from './funciones.js';
 import { usuario } from './data.js';
 

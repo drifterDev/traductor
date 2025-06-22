@@ -1,3 +1,12 @@
+/*
+Este archivo controla la lógica para la creación de nuevas palabras en el diccionario.
+Verifica si el usuario ha iniciado sesión; si no, lo redirige a la página de login.
+Gestiona el formulario de creación de palabras, validando los campos ingresados,
+evitando duplicados en español o Aho-Corasick, y mostrando mensajes de error o éxito.
+Al completar correctamente el formulario, guarda la nueva palabra usando `crearPalabra`
+y redirige al usuario al diccionario.
+*/
+
 import { crearPalabra, isLoggedIn, existePalabraEspanol, existePalabraAho } from './funciones.js';
 
 if (!isLoggedIn()) {

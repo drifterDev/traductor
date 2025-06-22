@@ -1,3 +1,13 @@
+/*
+Este archivo maneja la lógica para el registro de nuevos usuarios.
+Verifica si el usuario ya ha iniciado sesión; si es así, lo redirige a la página de diccionario.
+Crea un usuario administrador predefinido si no existe, y gestiona el formulario de registro.
+Valida los campos del formulario, evitando duplicados en el nombre de usuario o correo electrónico,
+y muestra mensajes de error o éxito.
+Al completar correctamente el formulario, crea un nuevo usuario usando `crearUsuario`
+y redirige al usuario al diccionario.
+*/
+
 import { usuario } from './data.js';
 import { existeUsuario, crearUsuario, isLoggedIn } from './funciones.js';
 

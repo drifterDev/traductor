@@ -1,3 +1,13 @@
+/*
+Este archivo maneja la lógica para la edición de palabras existentes en el diccionario.
+Verifica si el usuario ha iniciado sesión; si no, lo redirige a la página de login.
+Obtiene la palabra a editar a partir del índice proporcionado en la URL.
+Valida los campos del formulario, evitando duplicados en español o Aho-Corasick,
+y muestra mensajes de error o éxito.
+Al completar correctamente el formulario, actualiza la palabra usando `actualizarPalabra`
+y redirige al usuario al diccionario.
+*/
+
 import { obtenerPalabra, obtenerPalabras, actualizarPalabra, isLoggedIn, existePalabraEspanol, existePalabraAho } from './funciones.js';
 
 if (!isLoggedIn()) {
