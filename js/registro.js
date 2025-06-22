@@ -1,4 +1,5 @@
 import { usuario } from './data.js';
+import { existeUsuario, crearUsuario, obtenerUsuarioLoggeado } from './funciones.js';
 
 const registroForm = document.getElementById('registroForm');
 const usernameInput = document.getElementById('username');
@@ -7,9 +8,16 @@ const confirmPasswordInput = document.getElementById('confirmPassword');
 const emailInput = document.getElementById('email');
 const nameInput = document.getElementById('name');
 
-if (!existeUsuario(usuario.username, usuario.email)) {
-    guardarUsuario(usuario);
+if (obtenerUsuarioLoggeado()) {
+    window.location.href = 'index.html';
 }
+
+if (!existeUsuario(usuario.username, usuario.email)) {
+    crearUsuario(usuario);
+}
+
+// QUITAR
+console.log(JSON.parse(localStorage.getItem('usuarios')));
 
 registroForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -38,21 +46,10 @@ registroForm.addEventListener('submit', (e) => {
         rol
     };
 
-    guardarUsuario(nuevoUsuario);
+    crearUsuario(nuevoUsuario);
     limpiarFormulario();
     showSuccessMessage('Usuario creado correctamente');
 });
-
-function guardarUsuario(usuario) {
-    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    usuarios.push(usuario);
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-}
-
-function existeUsuario(username, email) {
-    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    return usuarios.some(usuario => usuario.username == username || usuario.email == email);
-}   
 
 function limpiarFormulario() {
     usernameInput.value = '';

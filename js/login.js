@@ -1,32 +1,28 @@
+import { existeUsuario, crearUsuario, login, obtenerUsuarioLoggeado } from './funciones.js';
 import { usuario } from './data.js';
 
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const loginForm = document.getElementById('loginForm');
 
-// QUITAR 
-console.log(JSON.parse(localStorage.getItem('usuarios') || '[]'));  
-
-function existeUsuario(username, password) {
-    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    return usuarios.some(usuario => usuario.username == username && usuario.password == password);
+if (obtenerUsuarioLoggeado()) {
+    window.location.href = 'index.html';
 }
+
+if (!existeUsuario(usuario.username, usuario.email)) {
+    crearUsuario(usuario);
+}
+
+// QUITAR
+console.log(JSON.parse(localStorage.getItem('usuarios')));
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!existeUsuario(usuario.username, usuario.password)) {
-        const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-        usuarios.push(usuario);
-        localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    }
     const username = usernameInput.value;
     const password = passwordInput.value;
 
-    console.log(usuario.username, usuario.password);
-    console.log(username, password);
-    console.log(existeUsuario(username, password));
     if (existeUsuario(username, password)) {
-        localStorage.setItem('loggeded', JSON.stringify(usuario));
+        login(username, password);
         window.location.href = 'index.html';
     } else {
         showErrorMessage('Usuario o contraseña incorrectos');
