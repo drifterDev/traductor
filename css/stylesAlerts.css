@@ -24,11 +24,24 @@
     border-bottom: 1px solid var(--color-text);
 }
 
+#btns{
+    display: flex;
+    gap: 20px;
+    padding: 0 6em;
+}
+
 .content-modal .btn-cerrar{
     width: 100%;
     margin-top: 15px;
     display: flex;
     justify-content: flex-end;
+}
+
+.content-modal .btn-aceptar{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .content-modal .btn-cerrar label{
@@ -39,7 +52,18 @@
     cursor: pointer;
 }
 
+.content-modal .btn-aceptar label{
+    padding: 7px 10px;
+    background-color: var(--color-text);
+    color: var(--color-nav);
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
 .content-modal .btn-cerrar label:hover{
+    background-color: var(--color-aux2);
+}
+.content-modal .btn-aceptar label:hover{
     background-color: var(--color-aux2);
 }
 
