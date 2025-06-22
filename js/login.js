@@ -12,14 +12,13 @@ function existeUsuario(username, password) {
     return usuarios.some(usuario => usuario.username == username && usuario.password == password);
 }
 
-if (!existeUsuario(usuario.username, usuario.password)) {
-    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    usuarios.push(usuario);
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-}
-
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (!existeUsuario(usuario.username, usuario.password)) {
+        const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+        usuarios.push(usuario);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    }
     const username = usernameInput.value;
     const password = passwordInput.value;
 
@@ -27,6 +26,7 @@ loginForm.addEventListener('submit', (e) => {
     console.log(username, password);
     console.log(existeUsuario(username, password));
     if (existeUsuario(username, password)) {
+        localStorage.setItem('loggeded', JSON.stringify(usuario));
         window.location.href = 'index.html';
     } else {
         showErrorMessage('Usuario o contraseña incorrectos');

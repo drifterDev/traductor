@@ -1,5 +1,9 @@
 import { traduccionEspAho, traduccionAhoEsp, diccionarioDatos } from './data.js';
 
+if(localStorage.getItem('loggeded') == null) {
+    window.location.href = 'login.html';
+}
+
 const lang1 = document.getElementById("len1");
 const lang2 = document.getElementById("len2");
 const swapLang = document.getElementById("swapLang");

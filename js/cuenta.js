@@ -1,8 +1,11 @@
-import { usuario } from './data.js';
 
 // Espera a que el DOM esté completamente cargado antes de renderizar
 document.addEventListener('DOMContentLoaded', () => {
-  renderPerfil();
+  if(localStorage.getItem('loggeded') == null) {
+    window.location.href = 'login.html';
+  } else {
+    renderPerfil();
+  }
 });
 
 /**
@@ -10,8 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
  * en los elementos del perfil en la página.
  */
 function renderPerfil() {
+  const usuario = JSON.parse(localStorage.getItem('loggeded'));
   document.getElementById('perfil-nombre').textContent = usuario.nombre;
-  document.getElementById('perfil-usuario').textContent = usuario.usuario;
+  document.getElementById('perfil-usuario').textContent = usuario.username;
   document.getElementById('perfil-email').textContent = usuario.email;
   document.getElementById('perfil-rol').textContent = usuario.rol;
 }

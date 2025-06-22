@@ -6,7 +6,11 @@ import {
 
 // Espera a que el DOM se cargue antes de renderizar el listado
 document.addEventListener('DOMContentLoaded', () => {
-  renderDiccionario();
+  if(localStorage.getItem('loggeded') == null) {
+    window.location.href = 'login.html';
+  } else {
+    renderDiccionario();
+  }
 });
 
 export function renderDiccionario() {
