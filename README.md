@@ -46,6 +46,23 @@ Luego, abre tu navegador y visita `http://localhost:8000`.
 
 
 ---
+## Acceso de administrador
+
+Actualmente, el sistema cuenta con un único usuario administrador predefinido. Si deseas acceder a las funciones administrativas (como editar o eliminar palabras), inicia sesión con las siguientes credenciales:
+
+**Usuario:** ElCacique
+
+**Contraseña:** 123456
+
+## Importante
+
+Cualquier usuario puede crear una nueva cuenta desde la interfaz de registro.
+
+Las cuentas nuevas serán asignadas automáticamente con rol de usuario normal, por lo que no tendrán acceso a funciones administrativas.
+
+Solo el administrador puede modificar y eliminar entradas del diccionario.
+
+---
 
 ## Construido con
 
