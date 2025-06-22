@@ -1,3 +1,4 @@
+/* ==== Paleta de colores global ==== */
 :root{
     --color-base: #1e1e2f;
     --color-text: #dfd0b8cc;
@@ -6,11 +7,13 @@
     --color-nav: #222831;
 }
 
+/* Reset básico de márgenes y paddings */
 *{
     margin: 0;
     padding: 0;
 }
 
+/* Layout principal: grid con columna de navbar + contenido */
 body {
     background-color: var(--color-base);
     color: var(--color-text);
@@ -19,6 +22,7 @@ body {
     font-family: Tahoma, sans-serif;
 }
 
+/* Contenedor de la sección principal */
 main {
     width: 100%;
     max-width: 90%;
@@ -31,6 +35,7 @@ main {
 }
 
 
+/* Encabezado de sección con fondo y borde */
 .header {
     display: flex;
     align-items: center;
@@ -45,11 +50,13 @@ main {
     color: var(--color-text);
 }
 
+/* Selectores de idioma */
 .language{
     display: block;
     width: 40%;
 }
 
+/* Botones principales */
 .btn {
     height: 2rem;
     background-color: var(--color-aux2);
@@ -62,6 +69,7 @@ main {
     margin-bottom: auto;
 }
 
+/* Contenedor de cajas de traducción: flex con wrap */
 .content-tra {
     display: flex;
     justify-content: center;
@@ -69,6 +77,7 @@ main {
     gap: 16px;
 }
 
+/* Caja individual (texto o resultado) */
 .box {
     background-color: var(--color-aux1);
     flex: 1 1 300px;
@@ -79,6 +88,7 @@ main {
 }
 
 
+/* Textareas de entrada/salida de traducción */
 textarea {
     width: 100%;
     box-sizing: border-box;
@@ -93,6 +103,7 @@ textarea {
     background-color: var(--color-aux1);
 }
 
+/* Sección de significados */
 .content-sig {
     background-color: var(--color-aux2);
     border: 3px solid var(--color-aux1);

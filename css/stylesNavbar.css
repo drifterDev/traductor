@@ -1,4 +1,4 @@
-
+/* ===== Contenedor principal de la barra de navegación ===== */
 #navbar {
     box-sizing: border-box;
     height: 100vh;
@@ -12,10 +12,12 @@
     align-self: start;
 }
 
+/* Quita los puntos por defecto de la lista */
 #navbar ul{
     list-style: none;
 }
 
+/* Estilos para el enlace activo dentro de un li.activa */
 #navbar ul li.activa a{
     color: var(--color-text);
 
@@ -28,6 +30,7 @@
     
 }
 
+/* Aplica a todos los enlaces y al contenedor para usar flex y padding */
 #navbar a, #navbar{
     padding: 0.6em;
     text-decoration: none;
@@ -35,30 +38,35 @@
     display: flex;
 } 
 
+/* Cada enlace lleva un margen centrado y bordes redondeados */
 #navbar a{
     border-radius: 0.5em;
     margin: 1em auto;
 }
 
+/* Hover: resalta fondo de la opción al pasar el ratón */
 #navbar a:hover{
     background-color: var(--color-aux1);
 }
 
+/* Ajusta el tamaño de los iconos SVG dentro de los enlaces */
 #navbar ul a svg{
     height: 2.3em;
     width: 2.3em;
 }
 
-
+/* ===== Responsive: pantallas estrechas ===== */
 @media(max-width: 600px){
     body{
         grid-template-columns: 1fr;
     }
     
+    /* Ajusta padding del main para dejar espacio al navbar fijo */
     main {
         padding: 2em 1em 100px 1em;
     }
-  
+    
+    /* Navbar en la parte inferior, horizontal */
     #navbar{
         height: auto;
         width: 100%;
@@ -76,6 +84,7 @@
         }
     }
 
+    /* Enlaces con margen horizontal en lugar de vertical */
     #navbar a{
         margin: auto 0.5em;
     }

@@ -1,3 +1,4 @@
+/* Contenedor de fondo semitransparente para el modal */
 .container-modal{
     width: 100%;
     height: 100vh;
@@ -11,6 +12,7 @@
     color: var(--color-text);
 }
 
+/* Caja interna del modal con contenido */
 .content-modal{
     width: 100%;
     max-width: 400px;
@@ -19,16 +21,19 @@
     border-radius: 0.5em;
 }
 
+/* Estilo del mensaje dentro del modal */
 .content-modal p{
     padding: 15px 0px;
     border-bottom: 1px solid var(--color-text);
 }
 
+/* Contenedor conjunto de botones (oculto si usamos btn-cerrar/aceptar separados) */
 #btns{
     display: flex;
     gap: 1em;
 }
 
+/* Botón de cancelar, alineado a la derecha */
 .content-modal .btn-cerrar{
     width: 100%;
     margin-top: 15px;
@@ -37,6 +42,7 @@
     padding-right: 2em;
 }
 
+/* Botón de aceptar, alineado a la izquierda */
 .content-modal .btn-aceptar{
     width: 100%;
     margin-top: 15px;
@@ -45,6 +51,7 @@
     padding-left: 2em;
 }
 
+/* Estilo común de las etiquetas que actúan como botones */
 .content-modal .btn-cerrar label{
     padding: 7px 10px;
     background-color: var(--color-text);
@@ -61,6 +68,7 @@
     cursor: pointer;
 }
 
+/* Efecto hover para ambos botones */
 .content-modal .btn-cerrar label:hover{
     background-color: var(--color-aux2);
 }
@@ -69,6 +77,7 @@
 }
 
 
+/* Ajustes en pantallas muy pequeñas */
 @media (max-width:500px) {
     .content-modal{
         width: 60%;
@@ -83,6 +92,7 @@
     }
 }
 
+/* Enlaces dentro de mensajes de error */
 #msg-error a{
     text-decoration: none;
     color: var(--color-aux2);
