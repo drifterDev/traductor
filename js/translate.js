@@ -121,7 +121,6 @@ textArea1.addEventListener("input", function() {
 
 
 const btnCerrarModal = document.querySelector(".btn-cerrar");
-const fndCerrarModal = document.querySelector("#fnd");
 
 btnCerrarModal.addEventListener("click", () =>{
     alertError.style.display = "none";

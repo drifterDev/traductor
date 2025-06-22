@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Se obtiene el modal para mostrar errores y el contenedor del mensaje de error
+const alertError = document.querySelector(".container-modal");
+const contError = document.getElementById("msg-error");
+
 function renderDiccionario() {
   const palabras = obtenerPalabras();
   const lista = document.getElementById('lista-diccionario');
@@ -47,13 +51,17 @@ function renderDiccionario() {
   // Si es admin, enlazamos el listener de eliminación a cada botón
   if (admin) {
     document.querySelectorAll('.delete-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', async () => {
         
         const idx = Number(btn.dataset.index);
         const termino = obtenerPalabra(idx).termino;
         const traduccion = obtenerPalabra(idx).traduccion;
 
-        if (!confirm(`¿Eliminar "${termino}", su significado y su traducción?`)) {
+        let texto = `¿Eliminar <strong>${termino}</strong>, su significado y su traducción?`;
+
+        const ans = await mostrarConfirmacion(texto);
+
+        if (!ans) {
           return;
         }
 
@@ -63,6 +71,29 @@ function renderDiccionario() {
       });
     });
   }
+}
+
+
+const btnCerrarModal = document.querySelector(".btn-cerrar");
+const btnAceptarModal = document.querySelector(".btn-aceptar");
+
+function mostrarConfirmacion(texto) {
+  return new Promise((res) => {
+    contError.innerHTML = texto;
+    alertError.style.display = "flex";
+
+    // eliminar
+    btnAceptarModal.onclick = () => {
+      alertError.style.display = "none";
+      res(true);
+    };
+    
+    // mantener
+    btnCerrarModal.onclick = () => {
+      alertError.style.display = "none";
+      res(false);
+    };
+  });
 }
 
 

@@ -7,8 +7,9 @@
   <!-- Estilos: traducción, barra de navegación y contenido -->
   <link rel="stylesheet" href="css/stylesTranslate.css" />
   <link rel="stylesheet" href="css/stylesNavbar.css" />
-    <link rel="icon" href="icons/languages-svgrepo-com.svg">
-    <link rel="stylesheet" href="css/stylesContent.css" />
+  <link rel="icon" href="icons/languages-svgrepo-com.svg">
+  <link rel="stylesheet" href="css/stylesContent.css" />
+  <link rel="stylesheet" href="css/stylesAlerts.css" />
   <!-- Lógica del diccionario como módulo ES6 -->
 </head>
 
@@ -79,6 +80,23 @@
       <img src="icons/add_circle_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Añadir" />
     </button>
   </main>
+
+  <!-- ventana alert -->
+  <div class="container-modal">
+      <div class="content-modal">
+          <p id = "msg-error">hola esto es de prueba</p>
+          <div id = "btns">
+            <div class="btn-aceptar">
+                <label>Eliminar</label>
+            </div>
+            <div class="btn-cerrar">
+              <label>Mantener</label>
+            </div>
+          </div>
+      </div>
+  </div>
+  
+
   <script defer type="module" src="js/funciones.js"></script>
   <script defer type="module" src="js/diccionario.js"></script>
 </body>
