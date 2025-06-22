@@ -54,7 +54,7 @@ traslateBtn.addEventListener("click", () => {
                 textoT.push(traduccionEspAho[wor]);
             }else{
                 alertError.style.display = "flex";
-                contError.innerHTML = `La palabra <strong>${wor}</strong> no existe, si desea agregar la palabra, en la pestaña <a href="diccionario.html">diccionario</a> podra poner su traducción y significado`;
+                contError.innerHTML = `La palabra <strong>${wor}</strong> no existe. Si deseas agregarla, puedes hacerlo en la pestaña <a href="diccionario.html">diccionario</a>, donde podrás ingresar su traducción y significado.`;
                 break;
             }
         }else{
@@ -62,7 +62,7 @@ traslateBtn.addEventListener("click", () => {
                 textoT.push(traduccionAhoEsp[wor]);
             }else{
                 alertError.style.display = "flex";
-                contError.innerHTML = `La palabra <strong>${wor}</strong> no existe, si desea agregar la palabra, en la pestaña <a href="diccionario.html">diccionario</a> podra poner su traducción y significado`;
+                contError.innerHTML = `La palabra <strong>${wor}</strong> no existe. Si deseas agregarla, puedes hacerlo en la pestaña <a href="diccionario.html">diccionario</a>, donde podrás ingresar su traducción y significado.`;
                 break;
             }
         }
@@ -107,12 +107,8 @@ textArea1.addEventListener("input", function() {
 
 
 const btnCerrarModal = document.querySelector(".btn-cerrar");
-const fndCerrarModal = document.querySelector(".container-modal");
+const fndCerrarModal = document.querySelector("#fnd");
 
 btnCerrarModal.addEventListener("click", () =>{
-    alertError.style.display = "none";
-})
-
-fndCerrarModal.addEventListener("click", () =>{
     alertError.style.display = "none";
 })
