@@ -16,7 +16,7 @@ Este proyecto es una entrega de la materia **Desarrollo Web 1** de la Universida
 Puedes clonar este repositorio en tu máquina local con el siguiente comando:
 
 ```bash
-git clone https://github.com/tu-usuario/traductor-aho-corasick.git
+git clone https://github.com/drifterDev/traductor.git
 ```
 
 O descargar directamente el archivo comprimido desde GitHub.
