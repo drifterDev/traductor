@@ -38,7 +38,7 @@ h2 {
 }
 /* Icono de usuario grande */
 .perfil-panel .avatar {
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 /* Espacio entre líneas de info */
 .perfil-panel .info div {
@@ -185,4 +185,27 @@ h2 {
 /* Reduce margen inferior en pantallas muy pequeñas */
 @media (max-width: 480px) {
     .panel { margin-bottom: 1rem; }
+}
+
+/* Contenedor del botón de logout */
+.logout-container {
+  display: flex;
+  justify-content: flex-end; /* alinea a la derecha */
+  margin-top: 1.5rem;
+}
+
+/* Estilo básico del botón de cerrar sesión */
+.logout-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--color-aux2);
+  color: var(--color-base);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: var(--color-aux1);
 }
