@@ -1,5 +1,4 @@
-import { traduccionEspAho, traduccionAhoEsp, diccionarioDatos } from './data.js';
-import { isLoggedIn } from './funciones.js';
+import { isLoggedIn, obtenerPalabras, obtenerPalabraEspanol, obtenerPalabraAho, existePalabraEspanol, existePalabraAho } from './funciones.js';
 
 if(!isLoggedIn()) {
     window.location.href = 'login.html';
@@ -49,17 +48,16 @@ traslateBtn.addEventListener("click", () => {
     
     for (let wor of textoO){
         if (lang1.innerHTML == "Español"){
-            
-            if ((wor in traduccionEspAho)){
-                textoT.push(traduccionEspAho[wor]);
+            if (existePalabraEspanol(wor)){
+                textoT.push(obtenerPalabraEspanol(wor).traduccion);
             }else{
                 alertError.style.display = "flex";
                 contError.innerHTML = `La palabra <strong>${wor}</strong> no existe. Si deseas agregarla, puedes hacerlo en la pestaña <a href="diccionario.html">diccionario</a>, donde podrás ingresar su traducción y significado.`;
                 break;
             }
         }else{
-            if ((wor in traduccionAhoEsp)){
-                textoT.push(traduccionAhoEsp[wor]);
+            if (existePalabraAho(wor)){
+                textoT.push(obtenerPalabraAho(wor).termino);
             }else{
                 alertError.style.display = "flex";
                 contError.innerHTML = `La palabra <strong>${wor}</strong> no existe. Si deseas agregarla, puedes hacerlo en la pestaña <a href="diccionario.html">diccionario</a>, donde podrás ingresar su traducción y significado.`;
@@ -95,10 +93,10 @@ textArea1.addEventListener("input", function() {
         lastWord = lastWord.toLowerCase();
         
         if (lang1.innerHTML == "Aho-coracick"){
-            lastWord = traduccionAhoEsp[lastWord];
+            lastWord = obtenerPalabraAho(lastWord).termino;
         }
         
-        const ans = diccionarioDatos.find(item => item.termino == lastWord);
+        const ans = obtenerPalabraEspanol(lastWord);
         
         if (ans){ textArea3.value = ans.definicion; }
         else{ textArea3.setAttribute("placeholder", "Palabra desconocida"); }
