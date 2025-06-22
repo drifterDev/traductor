@@ -60,9 +60,12 @@ traslateBtn.addEventListener("click", () => {
     // Se toma el texto de textArea1, se recorta los espacios extra y se divide en palabras
     let textoO = textArea1.value.trim().split(" ");
     let textoT = [];  // Aquí se almacenarán las palabras traducidas
-    
+
+    textoO = textoO.map((wor) => wor.toLowerCase());
+
     // Se recorre cada palabra del texto original
     for (let wor of textoO){
+
         if (lang1.innerHTML == "Español"){
             if (existePalabraEspanol(wor)){
                 textoT.push(obtenerPalabraEspanol(wor).traduccion);
