@@ -22,8 +22,11 @@ const diccionarioDatos = [
 ];
 
 export function cargarDiccionario() {
-    for (const palabra of diccionarioDatos) {
-        crearPalabra(palabra);
+    if (localStorage.getItem('cargado') == null){
+        for (const palabra of diccionarioDatos) {
+            crearPalabra(palabra);
+        }
+        localStorage.setItem('cargado', 'true');
     }
 }
   
