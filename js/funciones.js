@@ -44,6 +44,9 @@ export function crearUsuario(usuario) {
 export function login(username, password) {
     const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
     const usuario = usuarios.find(usuario => usuario.username == username && usuario.password == password);
+    if (usuario == null){
+        return;
+    }
     localStorage.setItem('loggeded', JSON.stringify(usuario));
 }
 
