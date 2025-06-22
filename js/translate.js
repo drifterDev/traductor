@@ -1,5 +1,4 @@
-import { traduccionEspAho, traduccionAhoEsp, diccionarioDatos } from './data.js';
-import { isLoggedIn } from './funciones.js';
+import { isLoggedIn, obtenerPalabras, obtenerPalabraEspanol, obtenerPalabraAho, existePalabraEspanol, existePalabraAho } from './funciones.js';
 
 if(!isLoggedIn()) {
     window.location.href = 'login.html';
@@ -62,25 +61,19 @@ traslateBtn.addEventListener("click", () => {
     
     // Se recorre cada palabra del texto original
     for (let wor of textoO){
-        if (lang1.innerHTML == "Español"){  // Si el idioma original es Español
-            
-            // Se verifica si la palabra existe en el diccionario de traducción de Español a Aho-coracick
-            if ((wor in traduccionEspAho)){
-                textoT.push(traduccionEspAho[wor]);  // Se agrega la traducción
-            } else {
-                // Si no existe la traducción, se muestra un mensaje de error
-                alertError.style.display = "flex";  // Se muestra el modal de error
+        if (lang1.innerHTML == "Español"){
+            if (existePalabraEspanol(wor)){
+                textoT.push(obtenerPalabraEspanol(wor).traduccion);
+            }else{
+                alertError.style.display = "flex";
                 contError.innerHTML = `La palabra <strong>${wor}</strong> no existe. Si deseas agregarla, puedes hacerlo en la pestaña <a href="diccionario.html">diccionario</a>, donde podrás ingresar su traducción y significado.`;
                 break;  // Se detiene el proceso al encontrar un error
             }
-        } else {  // Si el idioma original no es Español (probablemente Aho-coracick)
-            
-            // Se verifica si la palabra existe en el diccionario de traducción de Aho-coracick a Español
-            if ((wor in traduccionAhoEsp)){
-                textoT.push(traduccionAhoEsp[wor]);  // Se agrega la traducción
-            } else {
-                // Si no existe la traducción, se muestra un mensaje de error
-                alertError.style.display = "flex";  // Se muestra el modal de error
+        }else{
+            if (existePalabraAho(wor)){
+                textoT.push(obtenerPalabraAho(wor).termino);
+            }else{
+                alertError.style.display = "flex";
                 contError.innerHTML = `La palabra <strong>${wor}</strong> no existe. Si deseas agregarla, puedes hacerlo en la pestaña <a href="diccionario.html">diccionario</a>, donde podrás ingresar su traducción y significado.`;
                 break;  // Se detiene el proceso al encontrar un error
             }
@@ -116,10 +109,10 @@ textArea1.addEventListener("input", function() {
         lastWord = lastWord.toLowerCase();
         
         if (lang1.innerHTML == "Aho-coracick"){
-            lastWord = traduccionAhoEsp[lastWord];
+            lastWord = obtenerPalabraAho(lastWord).termino;
         }
         
-        const ans = diccionarioDatos.find(item => item.termino == lastWord);
+        const ans = obtenerPalabraEspanol(lastWord);
         
         if (ans){ textArea3.value = ans.definicion; }
         else{ textArea3.setAttribute("placeholder", "Palabra desconocida"); }

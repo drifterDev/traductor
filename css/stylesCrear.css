@@ -1,0 +1,157 @@
+.crear-container {
+    background-color: var(--color-aux1);
+    border: 2px solid var(--color-aux2);
+    border-radius: 0.5em;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.crear-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.crear-header h1 {
+    color: var(--color-text);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.crear-header p {
+    color: var(--color-aux2);
+    font-size: 1rem;
+}
+
+.crear-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.crear-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.crear-form .form-group label {
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.crear-form .form-group input,
+.crear-form .form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid var(--color-aux2);
+    border-radius: 0.5em;
+    background-color: var(--color-base);
+    color: var(--color-text);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: Arial, sans-serif;
+}
+
+.crear-form .form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.crear-form .form-group input:focus,
+.crear-form .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-text);
+}
+
+.crear-form .form-group input::placeholder,
+.crear-form .form-group textarea::placeholder {
+    color: var(--color-aux2);
+    opacity: 0.7;
+}
+
+.crear-form .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-cancelar {
+    flex: 1;
+    padding: 0.75rem;
+    background-color: var(--color-base);
+    color: var(--color-text);
+    border: 2px solid var(--color-aux2);
+    border-radius: 0.5em;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    background-color: var(--color-aux2);
+    color: var(--color-base);
+}
+
+.btn-crear {
+    flex: 1;
+    padding: 0.75rem;
+    background-color: var(--color-aux2);
+    color: var(--color-base);
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-crear:hover {
+    background-color: var(--color-text);
+}
+
+.btn-crear:active,
+.btn-cancelar:active {
+    transform: translateY(1px);
+}
+
+.error-message {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #ff6b6b;
+    padding: 0.75rem;
+    border-radius: 0.5em;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.success-message {
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    color: #51cf66;
+    padding: 0.75rem;
+    border-radius: 0.5em;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .crear-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .crear-form .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-cancelar,
+    .btn-crear {
+        width: 100%;
+    }
+} 

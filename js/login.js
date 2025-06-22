@@ -1,4 +1,4 @@
-import { existeUsuario, crearUsuario, login, isLoggedIn } from './funciones.js';
+import { existeUsuario, crearUsuario, login, isLoggedIn, cargarDiccionario } from './funciones.js';
 import { usuario } from './data.js';
 
 const usernameInput = document.getElementById('username');
@@ -22,6 +22,7 @@ loginForm.addEventListener('submit', (e) => {
     const password = passwordInput.value;
 
     if (existeUsuario(username, password)) {
+        cargarDiccionario();
         login(username, password);
         window.location.href = 'index.html';
     } else {
