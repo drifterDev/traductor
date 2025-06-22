@@ -6,6 +6,8 @@
     <title>Traductor</title>
     <link rel="stylesheet" href="css/stylesTranslate.css">
     <link rel="stylesheet" href="css/stylesNavbar.css">
+    <link rel="stylesheet" href="css/stylesAlerts.css">
+    
     <link rel="icon" href="icons/languages-svgrepo-com.svg">
 </head>
 
@@ -87,7 +89,20 @@
             <label for="significado">Definición<span id = "wordA"> de <span id = "wordS"></span>:</span></label>
             <textarea id="significado" placeholder="Definición de la última palabra" readonly></textarea>
         </div>
-    </main>
+    </main> 
+
+    <!-- ventana alert -->
+    <div class="container-modal">
+        <div class="content-modal">
+            <p id = "msg-error"></p>
+            <div class="btn-cerrar">
+                <label>Cerrar</label>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ventana alert -->
+
     <script defer type="module" src="js/funciones.js"></script>
     <script defer type="module" src="js/translate.js"></script>
 </body>

@@ -40,6 +40,9 @@ swapLang.addEventListener("click", () => {
 
 const traslateBtn = document.getElementById("traBtn");
 
+const alertError = document.querySelector(".container-modal");
+const contError = document.getElementById("msg-error");
+
 traslateBtn.addEventListener("click", () => {
     let textoO = textArea1.value.trim().split(" ");
     let textoT = [];
@@ -50,14 +53,16 @@ traslateBtn.addEventListener("click", () => {
             if ((wor in traduccionEspAho)){
                 textoT.push(traduccionEspAho[wor]);
             }else{
-                alert(`La palabra ${wor} no existe, si desea agregar la palabra, en la pestaña diccionario podra poner su traducción y significado`);
+                alertError.style.display = "flex";
+                contError.innerHTML = `La palabra <strong>${wor}</strong> no existe, si desea agregar la palabra, en la pestaña <a href="diccionario.html">diccionario</a> podra poner su traducción y significado`;
                 break;
             }
         }else{
             if ((wor in traduccionAhoEsp)){
                 textoT.push(traduccionAhoEsp[wor]);
             }else{
-                alert(`La palabra ${wor} no existe, si desea agregar la palabra, en la pestaña diccionario podra poner su traducción y significado`);
+                alertError.style.display = "flex";
+                contError.innerHTML = `La palabra <strong>${wor}</strong> no existe, si desea agregar la palabra, en la pestaña <a href="diccionario.html">diccionario</a> podra poner su traducción y significado`;
                 break;
             }
         }
@@ -99,3 +104,15 @@ textArea1.addEventListener("input", function() {
         else{ textArea3.setAttribute("placeholder", "Palabra desconocida"); }
     }
 });
+
+
+const btnCerrarModal = document.querySelector(".btn-cerrar");
+const fndCerrarModal = document.querySelector(".container-modal");
+
+btnCerrarModal.addEventListener("click", () =>{
+    alertError.style.display = "none";
+})
+
+fndCerrarModal.addEventListener("click", () =>{
+    alertError.style.display = "none";
+})
