@@ -15,6 +15,10 @@ export function login(username, password) {
     localStorage.setItem('loggeded', JSON.stringify(usuario));
 }
 
+export function isAdmin() {
+    return obtenerUsuarioLoggeado().rol === 'Administrador';
+}
+
 export function logout() {
     localStorage.removeItem('loggeded');
 }

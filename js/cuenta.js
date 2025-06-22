@@ -1,4 +1,4 @@
-import { isLoggedIn, obtenerUsuarioLoggeado } from './funciones.js';
+import { isLoggedIn, logout, obtenerUsuarioLoggeado } from './funciones.js';
 
 // Espera a que el DOM esté completamente cargado antes de renderizar
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,8 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function renderPerfil() {
   const usuario = obtenerUsuarioLoggeado();
-  document.getElementById('perfil-nombre').textContent = usuario.nombre;
+  document.getElementById('perfil-nombre').textContent = usuario.name;
   document.getElementById('perfil-usuario').textContent = usuario.username;
   document.getElementById('perfil-email').textContent = usuario.email;
   document.getElementById('perfil-rol').textContent = usuario.rol;
+
+  const logoutBtn = document.getElementById('logout-btn');
+  logoutBtn.addEventListener('click', () => {
+    logout();
+    window.location.href = 'login.html';
+  });
 }

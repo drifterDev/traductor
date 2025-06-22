@@ -3,7 +3,7 @@ import {
   traduccionEspAho,     // Mapa: español → idioma “Aho”
   traduccionAhoEsp      // Mapa: idioma “Aho” → español
 } from './data.js';
-import { isLoggedIn } from './funciones.js';
+import { isLoggedIn, isAdmin, obtenerUsuarioLoggeado } from './funciones.js';
 
 // Espera a que el DOM se cargue antes de renderizar el listado
 document.addEventListener('DOMContentLoaded', () => {
