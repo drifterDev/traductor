@@ -1,178 +1,78 @@
-# Traductor Español - Aho-coracick
+# Traductor Español - Aho-Corasick
 
-Una aplicación web para traducir palabras entre español y el idioma Aho-coracick, con sistema de autenticación y gestión de diccionario.
-
-## 🌟 Características
-
-### 🔐 Sistema de Autenticación
-- **Registro de usuarios**: Crear cuentas con nombre, usuario, email y contraseña
-- **Inicio de sesión**: Autenticación segura con validación de credenciales
-- **Gestión de sesiones**: Control de acceso a funcionalidades protegidas
-- **Roles de usuario**: Diferenciación entre usuarios normales y administradores
-
-### 📚 Traducción
-- **Traducción bidireccional**: Español ↔ Aho-coracick
-- **Interfaz intuitiva**: Campos de texto con intercambio de idiomas
-- **Definiciones automáticas**: Muestra definiciones de palabras en tiempo real
-- **Validación de palabras**: Alerta cuando una palabra no existe en el diccionario
-
-### 📖 Gestión de Diccionario
-- **Visualización**: Lista completa de palabras con términos y definiciones
-- **Crear palabras**: Formulario para agregar nuevas palabras (solo administradores)
-- **Editar palabras**: Modificar términos existentes (solo administradores)
-- **Eliminar palabras**: Remover palabras del diccionario (solo administradores)
-
-### 🎨 Interfaz de Usuario
-- **Diseño responsivo**: Funciona en dispositivos móviles y de escritorio
-- **Tema oscuro**: Interfaz moderna con colores oscuros
-- **Navegación intuitiva**: Barra lateral con acceso a todas las funciones
-- **Mensajes de feedback**: Notificaciones de éxito y error
-
-## 🚀 Instalación y Uso
-
-### Requisitos
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- No requiere servidor - funciona completamente en el cliente
-
-### Instalación
-1. Clona o descarga el repositorio
-2. Abre `index.html` en tu navegador
-3. ¡Listo para usar!
-
-### Primeros Pasos
-1. **Crear cuenta**: Ve a la página de registro y crea tu cuenta
-2. **Iniciar sesión**: Accede con tus credenciales
-3. **Traducir**: Usa la página principal para traducir palabras
-4. **Explorar diccionario**: Revisa todas las palabras disponibles
-
-## 📁 Estructura del Proyecto
-
-```
-traductor/
-├── index.html              # Página principal de traducción
-├── login.html              # Página de inicio de sesión
-├── registro.html           # Página de registro
-├── cuenta.html             # Perfil de usuario
-├── diccionario.html        # Gestión del diccionario
-├── crear.html              # Crear nuevas palabras
-├── editar.html             # Editar palabras existentes
-├── css/
-│   ├── stylesTranslate.css # Estilos principales
-│   ├── stylesNavbar.css    # Estilos de navegación
-│   ├── stylesContent.css   # Estilos de contenido
-│   ├── stylesLogin.css     # Estilos de autenticación
-│   └── stylesCrear.css     # Estilos de formularios
-├── js/
-│   ├── funciones.js        # Funciones principales
-│   ├── data.js            # Datos del diccionario
-│   ├── translate.js       # Lógica de traducción
-│   ├── login.js           # Lógica de autenticación
-│   ├── registro.js        # Lógica de registro
-│   ├── cuenta.js          # Lógica de perfil
-│   ├── diccionario.js     # Lógica del diccionario
-│   ├── crear.js           # Lógica de crear palabras
-│   └── editar.js          # Lógica de editar palabras
-└── icons/                 # Iconos SVG
-```
-
-## 👥 Usuarios y Permisos
-
-### Usuario Normal
-- ✅ Traducir palabras
-- ✅ Ver diccionario
-- ✅ Acceder a perfil
-- ❌ Crear/editar/eliminar palabras
-
-### Administrador
-- ✅ Todas las funciones de usuario normal
-- ✅ Crear nuevas palabras
-- ✅ Editar palabras existentes
-- ✅ Eliminar palabras
-
-## 🔧 Funcionalidades Técnicas
-
-### Almacenamiento
-- **localStorage**: Todos los datos se almacenan localmente en el navegador
-- **Persistencia**: Los datos se mantienen entre sesiones
-- **Estructura JSON**: Datos organizados en formato JSON
-
-### Validaciones
-- **Formularios**: Validación completa de todos los campos
-- **Duplicados**: Prevención de palabras duplicadas
-- **Autenticación**: Verificación de credenciales
-- **Permisos**: Control de acceso basado en roles
-
-### Interfaz
-- **Responsive Design**: Adaptable a diferentes tamaños de pantalla
-- **CSS Grid/Flexbox**: Layout moderno y flexible
-- **Variables CSS**: Sistema de colores consistente
-- **Transiciones**: Animaciones suaves para mejor UX
-
-## 📱 Compatibilidad
-
-### Navegadores Soportados
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
-
-### Dispositivos
-- 📱 Móviles (Android/iOS)
-- 📱 Tablets
-- 💻 Computadoras de escritorio
-- 💻 Laptops
-
-## 🎯 Casos de Uso
-
-### Para Estudiantes
-- Aprender el idioma Aho-coracick
-- Consultar definiciones de palabras
-- Practicar traducciones
-
-### Para Profesores
-- Gestionar el diccionario
-- Agregar nuevas palabras
-- Mantener contenido actualizado
-
-### Para Investigadores
-- Documentar el idioma
-- Crear recursos educativos
-- Preservar la lengua
-
-## 🔒 Seguridad
-
-- **Autenticación local**: Credenciales almacenadas en localStorage
-- **Validación de entrada**: Prevención de datos maliciosos
-- **Control de acceso**: Verificación de permisos en cada función
-- **Sanitización**: Limpieza de datos de entrada
-
-## 🚧 Limitaciones
-
-- **Almacenamiento local**: Los datos no se sincronizan entre dispositivos
-- **Sin servidor**: No hay backup automático de datos
-- **Navegador único**: Los datos están limitados a un navegador
-
-## 🔮 Futuras Mejoras
-
-- [ ] Sincronización en la nube
-- [ ] Exportar/importar diccionario
-- [ ] Búsqueda avanzada
-- [ ] Historial de traducciones
-- [ ] Ejercicios interactivos
-- [ ] Audio de pronunciación
-- [ ] Múltiples idiomas
-
-## 📞 Soporte
-
-Para reportar problemas o sugerir mejoras:
-1. Revisa la documentación existente
-2. Verifica que estés usando un navegador compatible
-3. Limpia el localStorage si hay problemas de datos
-
-## 📄 Licencia
-
-Este proyecto es de uso educativo y cultural para la preservación del idioma Aho-coracick.
+Este proyecto es una entrega de la materia **Desarrollo Web 1** de la Universidad Nacional de Colombia. Su objetivo es implementar una interfaz web funcional para un **traductor de palabras y frases entre el idioma español y un idioma artificial llamado Aho-Corasick**. Todo el desarrollo fue realizado usando únicamente tecnologías web nativas (HTML, CSS y JavaScript), sin el uso de frameworks o librerías externas.
 
 ---
 
-**Desarrollado con ❤️ para la comunidad Aho-coracick**
+## Vista previa
+
+<img src="./images/login.png">
+<img src="./images/traductor.png">
+
+---
+
+## Comenzando
+
+Puedes clonar este repositorio en tu máquina local con el siguiente comando:
+
+```bash
+git clone https://github.com/tu-usuario/traductor-aho-corasick.git
+```
+
+O descargar directamente el archivo comprimido desde GitHub.
+
+---
+
+## Ejecución del proyecto
+
+Dado que el proyecto está construido completamente en HTML, CSS y JavaScript puro, no necesita compilación ni instalación de dependencias. Puedes ejecutarlo de dos formas:
+
+### Opción 1: Usando servidor local de Python
+
+Si tienes Python instalado, puedes correr un servidor HTTP local:
+
+```bash
+# Desde la raíz del proyecto:
+python -m http.server
+```
+
+Luego, abre tu navegador y visita `http://localhost:8000`.
+
+### Opción 2: Usando Live Server (Visual Studio Code)
+
+1. Abre la carpeta del proyecto en VS Code.
+2. Instala la extensión **Live Server** si no la tienes.
+3. Haz clic derecho sobre `index.html` y selecciona **"Open with Live Server"**.
+
+
+---
+
+## Construido con
+
+* **HTML** - Estructura base del sitio.
+* **CSS** - Estilos personalizados (sin framework).
+* **JavaScript** - Lógica del traductor y manejo del DOM.
+
+---
+
+
+## Autores
+
+Este proyecto fue desarrollado por:
+
+* **Mateo Álvarez Murillo** [drifterDev](https://github.com/drifterDev)
+* **Efraín Gómez Ramírez** [EfraGR](https://github.com/EfraGR)
+* **Libardo Jose Navarro Pedrozo** [LibardoNavarro](https://github.com/LibardoNavarro)
+
+**Universidad Nacional de Colombia**
+
+Facultad de Minas
+
+Departamento de Ciencias de la Computación y de la Decisión
+
+---
+
+## Más vistas
+
+<img src="./images/palabras.png">
+<img src="./images/cuenta.png">
