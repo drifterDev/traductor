@@ -89,6 +89,7 @@ traslateBtn.addEventListener("click", () => {
     textArea2.value = textoT.join(" ");
 })
 
+// Referencias a elementos del DOM y escucha cambios en textArea1 para actualizar el significado.
 
 const textArea3 = document.getElementById("significado");
 const wordS = document.getElementById("wordS");
@@ -98,6 +99,11 @@ textArea1.addEventListener("input", function() {
     actualizarSignificado();
 });
 
+
+// Esta función analiza el texto ingresado en textArea1, toma la última palabra escrita,
+// la busca en el diccionario (según el idioma o método seleccionado), y si existe,
+// muestra su definición en textArea3. Si no se encuentra, se muestra un mensaje indicando
+// que la palabra es desconocida.
 
 function actualizarSignificado(){
     let textoO = textArea1.value.trim().split(" ");
