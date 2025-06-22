@@ -22,8 +22,11 @@ const diccionarioDatos = [
 ];
 
 export function cargarDiccionario() {
-    for (const palabra of diccionarioDatos) {
-        crearPalabra(palabra);
+    if (localStorage.getItem('cargado') == null){
+        for (const palabra of diccionarioDatos) {
+            crearPalabra(palabra);
+        }
+        localStorage.setItem('cargado', 'true');
     }
 }
   
@@ -41,6 +44,9 @@ export function crearUsuario(usuario) {
 export function login(username, password) {
     const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
     const usuario = usuarios.find(usuario => usuario.username == username && usuario.password == password);
+    if (usuario == null){
+        return;
+    }
     localStorage.setItem('loggeded', JSON.stringify(usuario));
 }
 
@@ -70,39 +76,45 @@ export function obtenerPalabras(){
 }
 
 export function crearPalabra(palabra) {
-    const palabras = JSON.parse(localStorage.getItem('palabras') || '[]');
-    palabra.id = palabras.length + 1;
+    if (existePalabraEspanol(palabra.termino) || existePalabraAho(palabra.traduccion)){
+        return;
+    }
+    if(palabra?.id && obtenerPalabra(palabra.id)){
+        return;
+    }
+    const palabras = obtenerPalabras();
+    palabra.id = palabras.length > 0 ? palabras[palabras.length - 1].id + 1 : 1;
     palabras.push(palabra);
     localStorage.setItem('palabras', JSON.stringify(palabras));
 }
 
 export function existePalabraEspanol(termino) {
-    const palabras = JSON.parse(localStorage.getItem('palabras') || '[]');
+    const palabras = obtenerPalabras();
     return palabras.some(palabra => palabra.termino == termino);
 }
 
 export function existePalabraAho(termino) {
-    const palabras = JSON.parse(localStorage.getItem('palabras') || '[]');
+    const palabras = obtenerPalabras();
     return palabras.some(palabra => palabra.traduccion == termino);
 }
 
 export function obtenerPalabraEspanol(termino) {
-    const palabras = JSON.parse(localStorage.getItem('palabras') || '[]');
+    const palabras = obtenerPalabras();
     return palabras.find(palabra => palabra.termino == termino);
 }
 
 export function obtenerPalabraAho(termino) {
-    const palabras = JSON.parse(localStorage.getItem('palabras') || '[]');
+    const palabras = obtenerPalabras();
     return palabras.find(palabra => palabra.traduccion == termino);
 }
 
 export function obtenerPalabra(id) {
-    const palabras = JSON.parse(localStorage.getItem('palabras') || '[]');
+    const palabras = obtenerPalabras();
     return palabras.find(palabra => palabra.id == id);
 }
 
 export function actualizarPalabra(id, palabra) {
-    const palabras = JSON.parse(localStorage.getItem('palabras') || '[]');
+    const palabras = obtenerPalabras();
     const index = palabras.findIndex(p => p.id == id);
     if (index !== -1) {
         palabras[index] = palabra;
@@ -111,7 +123,7 @@ export function actualizarPalabra(id, palabra) {
 }
 
 export function eliminarPalabra(id) {
-    const palabras = JSON.parse(localStorage.getItem('palabras') || '[]');
+    const palabras = obtenerPalabras();
     const index = palabras.findIndex(palabra => palabra.id == id);
     palabras.splice(index, 1);
     localStorage.setItem('palabras', JSON.stringify(palabras));

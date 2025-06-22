@@ -109,7 +109,7 @@ textArea1.addEventListener("input", function() {
         lastWord = lastWord.toLowerCase();
         
         if (lang1.innerHTML == "Aho-coracick"){
-            lastWord = obtenerPalabraAho(lastWord).termino;
+            lastWord = obtenerPalabraAho(lastWord)?.termino;
         }
         
         const ans = obtenerPalabraEspanol(lastWord);
